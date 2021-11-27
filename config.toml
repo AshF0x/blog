@@ -1,4 +1,4 @@
-baseURL = 'https://ashf0x.github.io'
+baseURL = 'https://ashf0x.github.io/blog/'
 languageCode = 'en-us'
 title = 'AshF0x Blog'
 theme = "terminal"
