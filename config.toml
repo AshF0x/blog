@@ -1,78 +1,82 @@
 baseURL = 'https://ashf0x.github.io'
 languageCode = 'en-us'
 title = 'AshF0x Blog'
+theme = "terminal"
+paginate = 5
 
-[Params]
-  # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
-  description = "Jane Doe's Portfolio!"
-  [Params.Terminal]
-  # Note: color schema
-  # Note: You can choose between
-  # Note: ["monokai", "powershell", "gruvbox_light", "gruvbox_dark", "solarized_light", "solarized_dark", "ubuntu", "retro"]
-  # Note: If you want to use the Goph theme, set it to "goph" (See README.md)
-  schema = "monokai"
+[params]
+  # dir name of your main content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
 
-  # Note: in terminal
-  # [userName]@[pcName]:~/$ cd [workDir]
-  # [userName]@[pcName]:~/[workDir]$ cat [profile]
-  #
-  # [description]
-  #
-  # Note: if you set Params.Tree > use = true
-  # [userName]@[pcName]:~/[workDir]$ tree ./[folderName]/
-  # ./[folderName]/
-  # ...
-  # Note: result of the tree command
-  userName = "ashf0x"
-  pcName = "helheim"
-  workDir = "blogposts"
-  profile = "profile.txt"
+  # ["orange", "blue", "red", "green", "pink"]
+  themeColor = "orange"
 
-  # Note: speed at which text is displayed on the terminal
-  # Note: if set to 0, typing animation will be disabled
-  # Note:
-  # Note: if you want to enable Mathjax, you need to set it to 0
-  # Note: and set "math: true" at front matter in your Markdown file
-  ps1Delay = 0 # prompt speed : [userName]@[pcName]:~/$ , [userName]@[pcName]:~/[workDir]$
-  stdoutDelay = 0 # stdout speed : [description] , files in Params.Tree
-  commandDelay = 50 # command speed : cd [workDir] , cat [profile] , tree ./[folderName]/
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 2
 
-  # terminalDelay = 20 : deprecated
+  # show selector to switch language
+  showLanguageSelector = false
 
-  # Note: speed at which text is displayed on the activity pages
-  # Note: if set to 0, typing animation will be disabled
-  # Note: 
-  # Note: if you want to enable Mathjax, you need to set it to 0
-  # Note: and set "math: true" at front matter in your Markdown file
-  titleDelay = 0 # title speed : "title" in front matter
-  contentDelay = 0 # content speed : content in .md file
+  # set theme to full screen width
+  fullWidthTheme = true
 
-  # activityDelay = 5 : deprecated
+  # center theme with default width
+  centerTheme = false
 
-  description = """
-  Hi I am Jane Doe!
-  Nice to meet you!
-  
-  """
+  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
+  # then the file will be used as a cover automatically.
+  # With this option you don't have to put the `cover` param in a front-matter.
+  autoCover = true
 
-  # Note: If you want to use a Markdown file, you can use the following
-  # description = "/description.md"
-  # Note: and put the description.md in /content/description.md
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  showLastUpdated = false
 
-  [Params.Tree]
-  use = true
-  folderName = "my_activity"
-  # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
-  files = [ 
-    ["C/C++", "https://www.example.com/"],
-    ["Python", "https://www.example.com/"],
-    ["Go", "https://golang.org/"],
-    ["Hugo", "/post/some-activity.md"],
-    ["Docker", "/post/some-activity.md"],
-    ["My First Post", "/posts/my-first-post.md"],
-  ]
+  # set a custom favicon (default is a `themeColor` square)
+  # favicon = "favicon.ico"
 
-[module]
-  [module.hugoVersion]
-    extended = true
-    min = "0.85.0"
+  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
+  # updatedDatePrefix = "Updated"
+
+  # set all headings to their default size (depending on browser settings)
+  # it's set to `true` by default
+  # oneHeadingSize = false
+
+
+[params.twitter]
+  # set Twitter handles for Twitter cards
+  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
+  # do not include @
+  creator = ""
+  site = ""
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Terminal"
+    subtitle = "A simple, retro theme for Hugo"
+    owner = ""
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "Back to home page"
+
+    [languages.en.params.logo]
+      logoText = "Terminal"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "showcase"
+        name = "Showcase"
+        url = "/showcase"
