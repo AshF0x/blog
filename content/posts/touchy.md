@@ -2,7 +2,7 @@
 title: "Touchy Logger"
 description: "The story of a weird logfile, mysterious input devices & a hacky parser"
 date: 2021-11-28
----
+--- 
 A few weeks back, me and a friend of mine called Viktor solved a CTF challenge together that fascinated both of us.
 It was fun, we learned a bunch from it and most importantly: From a pure forensics standpoint, the challenge was applicable to real life. So as a student enrolled in a Bachelor for IT Forensics & Cybercrime, that was really fun & motivating to see. So what challenge am I even talking about?
 
